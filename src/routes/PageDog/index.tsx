@@ -27,16 +27,10 @@ function PageDog() {
     axios.get('https://random.dog/woof.json?filter=mp4')
       .then(res => {
         setDog(res.data);
-
-       
+        setLoading(false);
       })
   }, [clickDog]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
 
   return (
     <>
