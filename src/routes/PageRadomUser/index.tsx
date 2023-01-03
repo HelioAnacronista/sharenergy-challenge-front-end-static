@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { MdSearch } from 'react-icons/md';
-import Select from 'react-select';
+import Select, { StylesConfig } from 'react-select';
 
 import Pagination from '../../components/Pagination';
 import CardUsers from '../../components/UI/CardUsers';
@@ -41,14 +41,43 @@ function PageRadomUser() {
          : users
 
    const Options = [
-      { value: '5', label: '5' },
-      { value: '10', label: '10' },
-      { value: '20', label: '20' },
-      { value: '50', label: '50' }
+      { value:  '5',  label: '5', color: "#333" },
+      { value: '10', label: '10', color: "#333" },
+      { value: '20', label: '20', color: "#333" },
+      { value: '50', label: '50', color: "#333" }
    ]
 
+   const [isHover, setIsHover] = useState(false);
 
-   
+   const handleMouseEnter = () => {
+      setIsHover(true);
+   };
+   const handleMouseLeave = () => {
+      setIsHover(false);
+   };
+
+   const colorStyles = {
+      control: (style : any) => ({...style, 
+         //Part of the select 
+         borderColor: "#333"
+      }),
+
+      option: (styles: any, {data, isDisable, isFocused, isSelected}: any) => {
+         return {...styles, 
+
+            backgroundColor: styles.isSelected = isSelected ? "rgba(189,197,209,.3)" : "white",
+
+            "&:hover": {
+               backgroundColor: "#d1d5db",
+               color: "#FFF"
+             },
+             
+            
+            color: data.color}
+      }
+   };
+
+
    useEffect(() => {
       userServices.getRandomUsers(currentPage, sizePage).then(res => {
          setUsers(res)
@@ -76,12 +105,12 @@ function PageRadomUser() {
                <ContainerPagination>
                   <div className='card-controller-pagination flex-c'>
 
-                  <form className="search-bar" onSubmit={handleSubmit}>
-                     <input className="input" value={search} onChange={handleChange}
-                        type="text" placeholder=" Nome.. E-mail.. Username.."
-                     />
-                     <button className="btn-search" type="submit"> <MdSearch></MdSearch> </button>
-                  </form>
+                     <form className="search-bar" onSubmit={handleSubmit}>
+                        <input className="input" value={search} onChange={handleChange}
+                           type="text" placeholder=" Nome.. E-mail.. Username.."
+                        />
+                        <button className="btn-search" type="submit"> <MdSearch></MdSearch> </button>
+                     </form>
 
                      <div className='mx-30'>
                         <div>
@@ -101,6 +130,7 @@ function PageRadomUser() {
                            className="basic-single"
                            classNamePrefix="select"
                            options={Options}
+                           styles={colorStyles}
                            onChange={obj => {
                               let v;
                               if (obj?.value === "5") {
@@ -126,15 +156,15 @@ function PageRadomUser() {
                </ContainerPagination>
 
 
-               
+
 
             </div>
 
             {
                filterUsers.map(users => {
                   return <CardUsers key={users.login.uuid} usersDTO={users}></CardUsers>
-               }) 
-            
+               })
+
             }
 
 
