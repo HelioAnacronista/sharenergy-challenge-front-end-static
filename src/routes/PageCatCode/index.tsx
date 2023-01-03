@@ -3,11 +3,20 @@ import { FaCat } from 'react-icons/fa';
 
 import { Container } from './style';
 import ImageCat from '../../components/ImageCat';
+import LoadingPage from '../../components/LoadingPage';
 
 function PageCatCode() {
-
     const [value, setValue] = useState('100');
 
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }, [value]);
+
+
+  
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -65,8 +74,11 @@ function PageCatCode() {
                 </div>
 
                 <div className='card-cat-img center'>
-                    {/**/}
-                    <ImageCat code={value} ></ImageCat>
+                    {loading ?
+                        (<LoadingPage></LoadingPage>)
+                        :
+                        (<ImageCat code={value} ></ImageCat>)
+                    }
                 </div>
                 <div className='mb-100 '>
 
