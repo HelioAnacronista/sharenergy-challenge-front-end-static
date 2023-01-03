@@ -19,16 +19,18 @@ function PageDog() {
     url: ""
   });
 
-  function getRandomDog() {
-    location.reload()
+  function clickDog() {
+    setLoading(true);
   }
 
   useEffect(() => {
     axios.get('https://random.dog/woof.json?filter=mp4')
       .then(res => {
         setDog(res.data);
+
+       
       })
-  }, []);
+  }, [clickDog]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +50,7 @@ function PageDog() {
               <div className='card-select mb-100'>
                 <div className='card-dog'>
                   <div className='btn-card center'>
-                    <button className="btn-style-global box-shadow-b" onClick={() => getRandomDog()}>
+                    <button className="btn-style-global box-shadow-b" onClick={clickDog}>
                       DOG <FaDog></FaDog>
                     </button>
                   </div>
