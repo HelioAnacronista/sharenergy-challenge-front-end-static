@@ -1,14 +1,13 @@
-<h1 align="center">Article Model</h1>
+<h1 align="center">
+sharenergy challenge front end static</h1>
 <p align="center"><i>Repository for versioning and project documentation used during the series of articles on GitHub.</i></p>
 
-Para finalizar o nosso README podemos adicionar estatísticas sobre o repositório como Linguagem mais utilizada, Número de linguagens presentes, qualidade do código e muitas outras através da ferramenta oferecida pela Codacy. Não abordaremos aqui como cadastrar seu repositório e ter acesso a estas estatísticas já que no site deles já tem uma documentação completa sobre isto. Veja como fica:
+O Sharenergy Challenge propôs um desafio para desenvolvedores web e eu decidi participar para testar minhas habilidades. Eu me concentrei no front-end e trabalhei em conjunto com os desafios propostos. Foi uma ótima experiência que me ajudou a aprimorar minhas habilidades e conhecimentos. Agradeço pela oportunidade de participar desse desafio.
 
 
 ##  About this project
 
-This is a repository used as a base to show the operation of Issues, Discussions, Wiki and other GitHub resources in addition to code versioning..
-
-The project inserted into this repository is a pre-existing template and is used as a basis for displaying statistical data about it.
+O desafio SHARENERGY é uma oportunidade para desenvolvedores criarem uma aplicação web que permita a comunicação com diferentes APIs e realizar operações de CRUD. A aplicação deve incluir uma página de login e, após o login, uma página principal que exibe uma listagem de usuários gerada por uma API de gerador de usuários aleatórios. Os usuários também devem ser capazes de criar, editar e excluir usuários da listagem através da aplicação. Além disso, a aplicação deve ser escalável, resiliente e altamente disponível para lidar com picos de acesso. A SHARENERGY é uma startup comprometida com a produção de energia fotovoltaica compartilhada e busca pessoas dinâmicas e apaixonadas por tecnologia para fazer parte de sua equipe.
 
 ### Technologies
 <p display="inline-block">
