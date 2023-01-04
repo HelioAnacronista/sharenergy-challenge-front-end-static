@@ -42,6 +42,9 @@ vite build
 
 
 ## References
+
+[Deploy vercel - App](http://sharenergy-challenge-front-end-static.vercel.app/)
+
 [About technology - React Docs](https://pt-br.reactjs.org/)
 
 [About Challenge - Repository Challenge](https://github.com/SHARENERGY-OFICIAL/desafio-sharenergy-2023-01)
